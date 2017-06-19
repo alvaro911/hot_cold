@@ -14,7 +14,8 @@ const initialState = {
   guessNums : [],
   guess : '',
   winning : false,
-  message : ''
+  message : 'Guess a number',
+  counter : 0
 }
 
 class App extends Component {
@@ -28,18 +29,16 @@ class App extends Component {
 
   checkIfHotOrCold = guess => {
     const {randomNum} = this.state
-    if(randomNum - guess > Math.abs(20)){
-      console.log('COLD');
+    let res = Math.abs(randomNum - guess)
+    if(res > 20){
       this.setState({
         message: 'COLD'
       })
-    }else if(randomNum - guess <= Math.abs(20)){
-      console.log('Kind of Hot');
+    } else if (res <= 20 && res > 10){
       this.setState({
         message: 'KIND OF HOT'
       })
-    }else{
-      console.log('HOT');
+    } else {
       this.setState({
         message: 'HOT'
       })
@@ -49,16 +48,12 @@ class App extends Component {
   userGuess = e => {
     e.preventDefault()
     const guess = parseInt(this.state.guess, 0)
-    console.log('Guess is ', guess)
-    console.log('randomNum', this.state.randomNum)
     if(guess !== this.state.randomNum){
       this.checkIfHotOrCold(guess)
       this.setState({
-        guessNums: [...this.state.guessNums, guess]
-      },() => {
-        console.log(this.state.guessNums);
+        guessNums: [...this.state.guessNums, guess],
+        counter: this.state.counter + 1
       })
-
     }else{
       console.log('WINNER!!');
       this.setState({
@@ -83,9 +78,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <HotCold message={this.state.message}/>
-        <GuessInput onChange={this.onChange} userGuess={this.userGuess} guess={this.state.guess}/>
+        <GuessInput onChange={this.onChange} userGuess={this.userGuess} guess={this.state.guess} counter={this.state.counter}/>
         <GuessNums guessNums={this.state.guessNums}/>
         <button className="restart" onClick={this.restart}>Restart</button>
       </div>

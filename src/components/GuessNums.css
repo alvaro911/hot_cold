@@ -1,0 +1,22 @@
+.guess-nums{
+  padding:1em 2em;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.guess-nums ul{
+  padding:0;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.guess-nums li{
+  list-style: none;
+  background-color: #30c1e8;
+  color: white;
+  margin: 8px 5px;
+  padding:3px;
+}

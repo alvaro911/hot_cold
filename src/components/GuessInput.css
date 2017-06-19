@@ -1,0 +1,28 @@
+.guess-input{
+  width: 100%;
+  padding: 2em;
+  background-color: white;
+  border-bottom: 1px solid #575757;
+}
+
+.guess-input form{
+  width: 100%;
+  margin:.5em auto;
+}
+
+.guess-input input{
+  width: 100%;
+  font-size: 1.5em;
+  padding:.3em .5em;
+  border: 1px solid #575757;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
+.guess-input h2{
+  color: #494949;
+}
+
+.guess-input span{
+  color: #30c1e8;
+}

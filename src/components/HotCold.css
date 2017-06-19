@@ -1,0 +1,10 @@
+.hot-cold{
+  width:100%;
+  padding:.5em;
+  background-color: #bb12aa;
+  color: white;
+  height: auto;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  text-align: center;
+}
