@@ -46,13 +46,15 @@ class App extends Component {
   }
 
   userGuess = e => {
+    this.setState({
+      counter: this.state.counter + 1
+    })
     e.preventDefault()
     const guess = parseInt(this.state.guess, 0)
     if(guess !== this.state.randomNum){
       this.checkIfHotOrCold(guess)
       this.setState({
         guessNums: [...this.state.guessNums, guess],
-        counter: this.state.counter + 1
       })
     }else{
       console.log('WINNER!!');
