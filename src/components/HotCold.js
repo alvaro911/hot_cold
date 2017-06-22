@@ -1,13 +1,11 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 import './HotCold.css'
 
-export default class HotCold extends Component{
-  render(){
-    return(
-      <div className="hot-cold">
-        <h1>{this.props.message}</h1>
-      </div>
-    )
-  }
+export default function HotCold({ message }) {
+  return(
+    <div className="hot-cold">
+      <h1>{message}</h1>
+    </div>
+  )
 }
