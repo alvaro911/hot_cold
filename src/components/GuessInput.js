@@ -1,19 +1,19 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 import './GuessInput.css'
 
-export default function GuessInput(){
+export default function GuessInput(props){
   return(
     <div className="guess-input">
-      <form onSubmit={this.props.userGuess}>
+      <form onSubmit={props.userGuess}>
         <input
           type="number"
           maxLength={2}
-          value={this.props.guess}
-          onChange={this.props.onChange}
+          value={props.guess}
+          onChange={props.onChange}
         />
       </form>
-      <h2>Number of attemps # <span>{this.props.counter}</span></h2>
+      <h2>Number of attemps # <span>{props.counter}</span></h2>
     </div>
   )
 }

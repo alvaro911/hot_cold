@@ -59,6 +59,7 @@ class App extends Component {
     } else {
       this.setState({
         winning : true,
+        guessNums: [...this.state.guessNums, guess],
         message: `YOU WIN!!! THE NUMBER IS ${guess}`
       })
     }
@@ -82,7 +83,7 @@ class App extends Component {
       <div className="container">
         <HotCold message={this.state.message} />
         <GuessInput
-          onChange={this.onChange} 
+          onChange={this.onChange}
           userGuess={this.userGuess}
           guess={this.state.guess}
           counter={this.state.counter}
